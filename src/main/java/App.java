@@ -26,6 +26,7 @@ public class App {
     Handle handle = jdbi.open();
     List<Employee> employees = handle.createQuery("select EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL from HR.EMPLOYEES").
             map(new EmployeeMapper()).list();
+    handle.close();
 
   }
 
