@@ -23,4 +23,8 @@ public abstract class BaseTest {
   public void tearDownHandle() {
     handle.close();
   }
+
+  protected enum JOBS {
+    SA_REP, SA_MAN, ST_CLERK;
+  }
 }

@@ -29,8 +29,4 @@ public class QueryTests extends BaseTest {
     Assertions.assertEquals(employees.size(),10);
   }
 
-  enum JOBS {
-    SA_REP, SA_MAN, ST_CLERK;
-  }
-
 }
