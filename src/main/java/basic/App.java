@@ -1,6 +1,8 @@
-import org.jdbi.v3.core.Handle;
+package basic;
+
 import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.core.mapper.RowMapper;
+import org.jdbi.v3.core.statement.Query;
 import org.jdbi.v3.core.statement.StatementContext;
 
 import java.sql.ResultSet;
@@ -17,16 +19,16 @@ public class App {
 
     //get list of names from employess table
     List<String> names = new ArrayList<>();
-    jdbi.useHandle(handle -> {
+    jdbi.useHandle(handle ->
       names.addAll(handle.createQuery("select FIRST_NAME from HR.EMPLOYEES")
-              .mapTo(String.class).list());
-    });
+              .mapTo(String.class).list())
+    );
 
     //get list of employess using row mapper
-    Handle handle = jdbi.open();
-    List<Employee> employees = handle.createQuery("select EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL from HR.EMPLOYEES").
-            map(new EmployeeMapper()).list();
-    handle.close();
+    List<Employee> employees;
+    try(Query query = jdbi.open().createQuery("select EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL from HR.EMPLOYEES")){
+      employees = query.map(new EmployeeMapper()).list();
+    }
 
   }
 
