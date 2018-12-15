@@ -1,4 +1,4 @@
-package eu.sii.mapper;
+package eu.sii._2mapper;
 
 import com.sun.tools.internal.ws.wsdl.framework.NoSuchEntityException;
 import eu.sii.BaseTest;
@@ -62,6 +62,7 @@ public class MapperTests extends BaseTest {
   //    this.email = email;
   //  }
   //and base on that constructor we can tell which columns are mapped to what fields
+  //@JdbiConstructor and @ColumnName annotations are required here
   @Test
   public void getEmployWithId103ByConstructorMapper() {
     handle.registerRowMapper(ConstructorMapper.factory(Employee.class));

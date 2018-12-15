@@ -1,4 +1,4 @@
-package eu.sii.mapper;
+package eu.sii._2mapper;
 
 import org.jdbi.v3.core.mapper.reflect.ColumnName;
 import org.jdbi.v3.core.mapper.reflect.JdbiConstructor;

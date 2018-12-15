@@ -1,7 +1,4 @@
-package eu.sii.mapper;
-
-import org.jdbi.v3.core.mapper.reflect.ColumnName;
-import org.jdbi.v3.core.mapper.reflect.JdbiConstructor;
+package eu.sii._2mapper;
 
 import java.util.Objects;
 
@@ -11,11 +8,10 @@ public class Countries {
   private String countryName;
   private int regionId;
 
-  @JdbiConstructor
   public Countries(
-          @ColumnName("COUNTRY_ID") String countryId,
-          @ColumnName("COUNTRY_NAME") String countryName,
-          @ColumnName("REGION_ID") int regionId) {
+          String countryId,
+          String countryName,
+          int regionId) {
     this.countryId = countryId;
     this.countryName = countryName;
     this.regionId = regionId;

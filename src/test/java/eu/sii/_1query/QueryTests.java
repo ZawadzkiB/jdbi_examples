@@ -1,4 +1,4 @@
-package eu.sii.query;
+package eu.sii._1query;
 
 import com.sun.tools.internal.ws.wsdl.framework.NoSuchEntityException;
 import eu.sii.BaseTest;

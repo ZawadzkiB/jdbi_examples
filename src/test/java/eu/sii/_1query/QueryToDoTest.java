@@ -1,4 +1,4 @@
-package eu.sii.query;
+package eu.sii._1query;
 
 import eu.sii.BaseTest;
 import org.junit.jupiter.api.Assertions;
