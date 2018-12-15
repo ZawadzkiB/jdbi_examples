@@ -1,6 +1,7 @@
-package basic;
+package eu.sii.query;
 
 import com.sun.tools.internal.ws.wsdl.framework.NoSuchEntityException;
+import eu.sii.BaseTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

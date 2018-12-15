@@ -1,5 +1,6 @@
-package basic;
+package eu.sii.query;
 
+import eu.sii.BaseTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -49,5 +50,26 @@ public class QueryToDoTest extends BaseTest {
     Assertions.assertTrue(countryNames.containsAll(
             Arrays.asList("Canada", "Mexico")
     ));
+  }
+
+  /**
+   * Write test to check if count of countries from region with id 3 is 6
+   */
+  @Test
+  public void checkThatRegionId3Contains6Countries() {
+    String query = "SELECT COUNT(*) FROM HR.COUNTRIES ...";
+    int number = 0;
+    /**
+     * write here handle query and assign value to number variable
+     */
+    Assertions.assertEquals(number, 6);
+  }
+
+  @Test
+  public void checkThatThereAreOnly4Regions() {
+    /**
+     * Write query, handle method and assertion to check that
+     * there are only 4 different regions in HR.Regions table
+     */
   }
 }
