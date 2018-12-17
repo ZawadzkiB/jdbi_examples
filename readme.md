@@ -11,3 +11,7 @@
 JDBC url: `jdbc:oracle:thin:@localhost:49161:xe`
 
 
+Before start run:
+`mvnw.cmd clean install` on pom.xml to download all dependencies
+
+
