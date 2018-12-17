@@ -1,7 +1,7 @@
 package eu.sii._2mapper;
 
-import com.sun.tools.internal.ws.wsdl.framework.NoSuchEntityException;
 import eu.sii.BaseTest;
+import eu.sii.exceptions.NoSuchEntityException;
 import org.jdbi.v3.core.mapper.RowMapper;
 import org.jdbi.v3.core.mapper.reflect.ConstructorMapper;
 import org.jdbi.v3.core.statement.StatementContext;
@@ -24,7 +24,7 @@ public class MapperTests extends BaseTest {
             .bind(0, 103)
             .map(new EmployeeMapper())
             .findFirst()
-            .orElseThrow(() -> new NoSuchEntityException("Not found"));
+            .orElseThrow(NoSuchEntityException::new);
     Assertions.assertEquals(employee, new Employee(
             103,
             "Alexander",
@@ -71,7 +71,7 @@ public class MapperTests extends BaseTest {
             .bind(0, 103)
             .mapTo(Employee.class)
             .findFirst()
-            .orElseThrow(() -> new NoSuchEntityException("Not found"));
+            .orElseThrow(NoSuchEntityException::new);
     Assertions.assertEquals(employee, new Employee(
             103,
             "Alexander",

@@ -28,6 +28,7 @@ public abstract class BaseTest {
   //Closing handler connection to db
   @AfterEach
   public void tearDownHandle() {
+    handle.commit();
     handle.close();
   }
 

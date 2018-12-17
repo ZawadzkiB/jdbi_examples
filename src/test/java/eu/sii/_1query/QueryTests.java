@@ -1,7 +1,7 @@
 package eu.sii._1query;
 
-import com.sun.tools.internal.ws.wsdl.framework.NoSuchEntityException;
 import eu.sii.BaseTest;
+import eu.sii.exceptions.NoSuchEntityException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -32,7 +32,7 @@ public class QueryTests extends BaseTest {
             "SELECT FIRST_NAME FROM HR.EMPLOYEES")
             .mapTo(String.class)
             .findFirst()
-            .orElseThrow(() -> new NoSuchEntityException("Nothing was found"));
+            .orElseThrow(NoSuchEntityException::new);
     Assertions.assertEquals(name, "Ellen");
   }
 

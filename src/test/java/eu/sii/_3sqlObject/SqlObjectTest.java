@@ -1,7 +1,7 @@
 package eu.sii._3sqlObject;
 
-import com.sun.tools.internal.ws.wsdl.framework.NoSuchEntityException;
 import eu.sii.BaseTest;
+import eu.sii.exceptions.NoSuchEntityException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class SqlObjectTest extends BaseTest {
-
 
   //Here we are declaring our countriesDAO (data object access)
   private CountriesDAO countriesDAO;
@@ -31,7 +30,7 @@ public class SqlObjectTest extends BaseTest {
   //her we are getting optional of country and we are searching only one record by id
   @Test
   public void getCountryById() {
-    Countries country = countriesDAO.getCountries("DK").orElseThrow(() -> new NoSuchEntityException("Not found"));
+    Countries country = countriesDAO.getCountries("DK").orElseThrow(NoSuchEntityException::new);
     Assertions.assertEquals(country.getCountryId(),"DK");
   }
 }
